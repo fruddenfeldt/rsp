@@ -24,7 +24,7 @@
         color: whitesmoke;
         }
 
-    button {
+    button, input {
         width: 100px;
         color: whitesmoke;
         font-size: 15px;
