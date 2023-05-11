@@ -24,9 +24,60 @@ let scissors;
 
 let paper; 
 
-
-
-    if (document.getElementById("rock-button" == true))
+    if (document.getElementById("rock-button"))
         {
      console.log("rock")
 }
+
+
+
+/* RANDOM GENERATOR: */
+
+function getComputerChoice() {
+
+    let options = ["rock", "scissors", "paper"]
+    
+    const randomChoice = Math.floor(Math.random() * options.length)
+    
+    return options[randomChoice]
+    
+}
+
+console.log(getComputerChoice())
+
+/* OPTION BUTTONS: */
+
+    let clickRock = document.getElementById("rockButton");
+
+    clickRock.addEventListener("click", () => {
+        return(clickRock == true)
+    })
+
+    let clickScissors = document.getElementById("scissorsButton");
+
+    clickScissors.addEventListener("click", () => {
+        console.log("scissors!")
+    })
+
+    let clickPaper = document.getElementById("paperButton");
+
+    let paperPlay;
+
+    paperButton.onclick = () => {
+        console.log("paper selected");
+        paperPlay = "1";
+    }
+
+    console.log(paperPlay)
+
+ 
+
+/* GAME ENGINE */
+
+if (clickRock) {console.log("rockzzz")}
+
+
+/* if (getComputerChoice() == "rock") {
+    console.log("Rock") 
+    } else {console.log("not rock")
+} */
