@@ -15,69 +15,85 @@ RULES:
     if user has paper and the program has scissors, the program wins
     if user has paper and the program has paper, there is a draw
 
-    FIRST ITERATION:
-    receive input from buttons and print result in console.
-    */
-
-
-let scissors;
-
-let paper; 
-
-    if (document.getElementById("rock-button"))
-        {
-     console.log("rock")
-}
-
 
 
 /* RANDOM GENERATOR: */
 
 function getComputerChoice() {
 
-    let options = ["rock", "scissors", "paper"]
-    
+    let options = ["computer-rock", "computer-scissors", "computer-paper"]
     const randomChoice = Math.floor(Math.random() * options.length)
-    
     return options[randomChoice]
     
 }
 
-console.log(getComputerChoice())
+/* GAME ENGINE: */
 
-/* OPTION BUTTONS: */
+let playerChoice;
+let ComputerChoice
 
-    let clickRock = document.getElementById("rockButton");
+    /* IF PLAYER SELECTS ROCK: */
 
-    clickRock.addEventListener("click", () => {
-        return(clickRock == true)
-    })
+function storePlayerChoiceRock () {
+    let playerChoice = "player-rock";
+    console.log(playerChoice)
 
-    let clickScissors = document.getElementById("scissorsButton");
+    ComputerChoice = getComputerChoice();
+    console.log(ComputerChoice)
 
-    clickScissors.addEventListener("click", () => {
-        console.log("scissors!")
-    })
+    if (ComputerChoice == "computer-rock" && playerChoice == "player-rock") {
+        console.log("Draw!")
+    } 
+    
+    else if (ComputerChoice == "computer-scissors" && playerChoice == "player-rock") {
+        console.log("You win!")
+    } 
+    
+    else 
+        console.log("You lose!")
 
-    let clickPaper = document.getElementById("paperButton");
+}
 
-    let paperPlay;
+    /* IF PLAYER SELECTS SCISSORS: */
 
-    paperButton.onclick = () => {
-        console.log("paper selected");
-        paperPlay = "1";
-    }
+function storePlayerChoiceScissors () {
+    let playerChoice = "player-scissors";
+    console.log(playerChoice)
 
-    console.log(paperPlay)
+    ComputerChoice = getComputerChoice();
+    console.log(ComputerChoice)
 
- 
+    if (ComputerChoice == "computer-rock" && playerChoice == "player-scissors") {
+        console.log("You lose!")
+    } 
+    
+    else if (ComputerChoice == "computer-scissors" && playerChoice == "player-scissors") {
+        console.log("Draw!")
+    } 
+    
+    else 
+        console.log("You win!")
 
-/* GAME ENGINE */
+}
 
-if (clickRock) {console.log("rockzzz")}
+        /* IF PLAYER SELECTS PAPER: */
 
+function storePlayerChoicePaper () {
+    let playerChoice = "player-paper";
+    console.log(playerChoice)
 
-/* if (getComputerChoice() == "rock") {
-    console.log("Rock") 
-    } else {console.log("not rock")
-} */
+    ComputerChoice = getComputerChoice();
+    console.log(ComputerChoice)
+
+    if (ComputerChoice == "computer-rock" && playerChoice == "player-paper") {
+        console.log("You win!")
+    } 
+    
+    else if (ComputerChoice == "computer-scissors" && playerChoice == "player-paper") {
+        console.log("You lose!")
+    } 
+    
+    else 
+        console.log("Draw!")
+
+}
