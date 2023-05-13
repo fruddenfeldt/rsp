@@ -32,6 +32,15 @@ function getComputerChoice() {
 let playerChoice;
 let ComputerChoice
 
+let PlayerRoundWins = 0;
+let ComputerRoundWins = 0;
+let drawArray = [];
+let humanWinArray = [];
+let computerWinArray = [];
+
+console.log(`Human: ${humanWinArray.length}`);
+console.log(`Computer: ${computerWinArray.length}`);
+
     /* IF PLAYER SELECTS ROCK: */
 
 function storePlayerChoiceRock () {
@@ -43,14 +52,28 @@ function storePlayerChoiceRock () {
 
     if (ComputerChoice == "computer-rock" && playerChoice == "player-rock") {
         console.log("Draw!")
+        drawArray.push("draw");
+        console.log(`Human: ${humanWinArray.length}`);
+        console.log(`Computer: ${computerWinArray.length}`);
+        return;
     } 
     
     else if (ComputerChoice == "computer-scissors" && playerChoice == "player-rock") {
-        console.log("You win!")
+        console.log("You win!");
+        humanWinArray.push('humanWin')
+        console.log(`Human: ${humanWinArray.length}`);
+        console.log(`Computer: ${computerWinArray.length}`);
+        return;
+    
     } 
     
     else 
-        console.log("You lose!")
+        console.log("You lose!");
+        computerWinArray.push('computerWin')
+        console.log(`Human: ${humanWinArray.length}`);
+        console.log(`Computer: ${computerWinArray.length}`);
+        return;
+
 
 }
 
@@ -64,16 +87,27 @@ function storePlayerChoiceScissors () {
     console.log(ComputerChoice)
 
     if (ComputerChoice == "computer-rock" && playerChoice == "player-scissors") {
-        console.log("You lose!")
+        console.log("You lose!");
+        computerWinArray.push('computerWin');
+        console.log(`Human: ${humanWinArray.length}`);
+        console.log(`Computer: ${computerWinArray.length}`);
+        return;
     } 
     
     else if (ComputerChoice == "computer-scissors" && playerChoice == "player-scissors") {
-        console.log("Draw!")
+        console.log("Draw!");
+        drawArray.push("draw");
+        console.log(`Human: ${humanWinArray.length}`);
+        console.log(`Computer: ${computerWinArray.length}`);
+        return;
     } 
     
     else 
         console.log("You win!")
-
+        humanWinArray.push('humanWin');
+        console.log(`Human: ${humanWinArray.length}`);
+        console.log(`Computer: ${computerWinArray.length}`);
+        return;
 }
 
         /* IF PLAYER SELECTS PAPER: */
@@ -87,13 +121,34 @@ function storePlayerChoicePaper () {
 
     if (ComputerChoice == "computer-rock" && playerChoice == "player-paper") {
         console.log("You win!")
+        humanWinArray.push('humanWin');
+        console.log(`Human: ${humanWinArray.length}`)
+        console.log(`Computer: ${computerWinArray.length}`)
+        return;
     } 
     
     else if (ComputerChoice == "computer-scissors" && playerChoice == "player-paper") {
-        console.log("You lose!")
+        console.log("You lose!");
+        computerWinArray.push('computerWin');
+        console.log(`Human: ${humanWinArray.length}`);
+        console.log(`Computer: ${computerWinArray.length}`);
+        return;
     } 
     
     else 
         console.log("Draw!")
+        drawArray.push("draw");
+        console.log(`Human: ${humanWinArray.length}`);
+        console.log(`Computer: ${computerWinArray.length}`);
+        return;
+        
+        
 
 }
+
+/* WIN COUNTER: */
+
+
+
+
+
