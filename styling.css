@@ -1,5 +1,6 @@
 * {
     background-color: black;
+    /* border: solid red 2px; */
     
 }
 
@@ -28,4 +29,20 @@
         width: 100px;
         color: whitesmoke;
         font-size: 15px;
+    }
+
+    .result {
+        width: 1000px;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .resultUI {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
     }
