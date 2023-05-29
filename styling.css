@@ -1,6 +1,6 @@
 * {
     background-color: black;
-    border: solid red 2px; */
+    /* border: solid red 2px; */
     
 }
 
@@ -40,7 +40,9 @@
         align-items: center;
     }
 
-    .result-ui {
+    .resultUI {
         display: flex;
         gap: 40px;
+        justify-content: center;
+        align-items: center;
     }
