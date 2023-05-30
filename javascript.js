@@ -204,6 +204,7 @@ function storePlayerChoicePaper () {
 const humanPoints = document.createElement('p')
 const computerPoints = document.createElement('p')
 const resultContainer = document.querySelector('.resultUI')
+const button = document.querySelector('button')
 
 humanPoints.classList.add('resultUI')
 computerPoints.classList.add('resultUI')
@@ -211,8 +212,16 @@ computerPoints.classList.add('resultUI')
 resultContainer.appendChild(humanPoints)
 resultContainer.appendChild(computerPoints)
 
-humanPoints.textContent = 'human points!'
-computerPoints.textContent = 'computer points!'
+button.addEventListener('click', function (e) {
+
+humanPoints.textContent = 'Human points: ' + `${humanWinArray.length}`
+computerPoints.textContent = 'Computer points: ' + `${computerWinArray.length}`
+
+})
+
+// Score counter works, BUT:
+// Fails to refresh properly, i.e. does not work for round 2 onwards. 
+// Does not display clearly who won. 
 
 
 
