@@ -204,18 +204,18 @@ function storePlayerChoicePaper () {
 const humanPoints = document.createElement('p')
 const computerPoints = document.createElement('p')
 const resultContainer = document.querySelector('.resultUI')
-const button = document.querySelector('.playButton')
+const button = document.querySelector('.button-container')
 
-humanPoints.classList.add('resultUI')
+humanPoints.classList.add('resultUI')   
 computerPoints.classList.add('resultUI')
 
 resultContainer.appendChild(humanPoints)
 resultContainer.appendChild(computerPoints)
 
 button.addEventListener('click', function () {
-
-humanPoints.textContent = 'Human points: ' + `${humanWinArray.length}`
-computerPoints.textContent = 'Computer points: ' + `${computerWinArray.length}`
+  
+humanPoints.textContent = 'Human points: ' + `${humanWinArray.length}`;
+computerPoints.textContent = 'Computer points: ' + `${computerWinArray.length}`;
 
 })
 
