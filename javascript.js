@@ -37,8 +37,7 @@ function getComputerChoice() {
 let playerChoice;
 let ComputerChoice
 
-let PlayerRoundWins = 0;
-let ComputerRoundWins = 0;
+
 let drawArray = [];
 let humanWinArray = [];
 let computerWinArray = [];
@@ -219,10 +218,28 @@ computerPoints.textContent = 'Computer points: ' + `${computerWinArray.length}`;
 
 })
 
+
+// First draft of next iteration, where the winner is declared:
+// (does not work yet)
+
+let PlayerRoundWins = humanWinArray.length
+let ComputerRoundWins = computerWinArray.length 
+let totalRoundsPlayed = PlayerRoundWins + ComputerRoundWins
+const clickEvent = button.addEventListener('click', function () {})
+
+
+
+function declareWinner (PlayerRoundWins, ComputerRoundWins) {
+    for (let i = 0; i<totalRoundsPlayed; i++) {
+
+    if (PlayerRoundWins == 5) {console.log("declared winner: player!")}
+    if (ComputerRoundWins == 5) {console.log("declared winner: computer!")}
+}
+}
+
 // Score counter works, BUT:
 // Fails to refresh properly, i.e. does not work for round 2 onwards. 
 // Does not display clearly who won. 
-
 
 
 
