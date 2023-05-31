@@ -220,26 +220,50 @@ computerPoints.textContent = 'Computer points: ' + `${computerWinArray.length}`;
 
 
 // First draft of next iteration, where the winner is declared:
-// (does not work yet)
 
 let PlayerRoundWins = humanWinArray.length
 let ComputerRoundWins = computerWinArray.length 
 let totalRoundsPlayed = PlayerRoundWins + ComputerRoundWins
-const clickEvent = button.addEventListener('click', function () {})
 
+let playerWon = false;
+let computerWon = false;
 
+button.addEventListener('click', function() {
+  PlayerRoundWins = humanWinArray.length;
+  ComputerRoundWins = computerWinArray.length;
+  
+  if (PlayerRoundWins > 4) {
+    console.log("Declared winner: player!");
+    playerWon = true;
+  }
+  if (ComputerRoundWins > 4) {
+    console.log("Declared winner: computer!");
+    computerWon = true;
+  }
+});
 
-function declareWinner (PlayerRoundWins, ComputerRoundWins) {
-    for (let i = 0; i<totalRoundsPlayed; i++) {
+// Winner message:
 
-    if (PlayerRoundWins == 5) {console.log("declared winner: player!")}
-    if (ComputerRoundWins == 5) {console.log("declared winner: computer!")}
-}
-}
+const theWinnerIsHuman = document.createElement('p')
+theWinnerIsHuman.classList.add('humanWinnerStyle')
+resultContainer.appendChild(theWinnerIsHuman)
 
-// Score counter works, BUT:
-// Fails to refresh properly, i.e. does not work for round 2 onwards. 
-// Does not display clearly who won. 
+button.addEventListener('click', function () {
+
+    if (playerWon == true) {theWinnerIsHuman.textContent = 'THE WINNER IS: HUMAN!'}
+    if (computerWon == true) {theWinner.textContent = 'THE WINNER IS: COMPUTER!'}
+
+})
+
+const theWinnerIsComputer = document.createElement('p')
+theWinnerIsComputer.classList.add('computerWinnerStyle')
+resultContainer.appendChild(theWinnerIsComputer)
+
+button.addEventListener('click', function () {
+
+    if (computerWon == true) {theWinnerIsComputer.textContent = 'THE WINNER IS: COMPUTER!'}
+
+})
 
 
 

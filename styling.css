@@ -46,3 +46,11 @@
         justify-content: center;
         align-items: center;
     }
+
+    .humanWinnerStyle {
+        color: green;
+    }
+
+    .computerWinnerStyle {
+        color: red;
+    }
