@@ -37,8 +37,7 @@ function getComputerChoice() {
 let playerChoice;
 let ComputerChoice
 
-let PlayerRoundWins = 0;
-let ComputerRoundWins = 0;
+
 let drawArray = [];
 let humanWinArray = [];
 let computerWinArray = [];
@@ -204,16 +203,67 @@ function storePlayerChoicePaper () {
 const humanPoints = document.createElement('p')
 const computerPoints = document.createElement('p')
 const resultContainer = document.querySelector('.resultUI')
+const button = document.querySelector('.button-container')
 
-humanPoints.classList.add('resultUI')
+humanPoints.classList.add('resultUI')   
 computerPoints.classList.add('resultUI')
 
 resultContainer.appendChild(humanPoints)
 resultContainer.appendChild(computerPoints)
 
-humanPoints.textContent = 'human points!'
-computerPoints.textContent = 'computer points!'
+button.addEventListener('click', function () {
+  
+humanPoints.textContent = 'Human points: ' + `${humanWinArray.length}`;
+computerPoints.textContent = 'Computer points: ' + `${computerWinArray.length}`;
 
+})
+
+
+// First draft of next iteration, where the winner is declared:
+
+let PlayerRoundWins = humanWinArray.length
+let ComputerRoundWins = computerWinArray.length 
+let totalRoundsPlayed = PlayerRoundWins + ComputerRoundWins
+
+let playerWon = false;
+let computerWon = false;
+
+button.addEventListener('click', function() {
+  PlayerRoundWins = humanWinArray.length;
+  ComputerRoundWins = computerWinArray.length;
+  
+  if (PlayerRoundWins > 4) {
+    console.log("Declared winner: player!");
+    playerWon = true;
+  }
+  if (ComputerRoundWins > 4) {
+    console.log("Declared winner: computer!");
+    computerWon = true;
+  }
+});
+
+// Winner message:
+
+const theWinnerIsHuman = document.createElement('p')
+theWinnerIsHuman.classList.add('humanWinnerStyle')
+resultContainer.appendChild(theWinnerIsHuman)
+
+button.addEventListener('click', function () {
+
+    if (playerWon == true) {theWinnerIsHuman.textContent = 'THE WINNER IS: HUMAN!'}
+    if (computerWon == true) {theWinner.textContent = 'THE WINNER IS: COMPUTER!'}
+
+})
+
+const theWinnerIsComputer = document.createElement('p')
+theWinnerIsComputer.classList.add('computerWinnerStyle')
+resultContainer.appendChild(theWinnerIsComputer)
+
+button.addEventListener('click', function () {
+
+    if (computerWon == true) {theWinnerIsComputer.textContent = 'THE WINNER IS: COMPUTER!'}
+
+})
 
 
 
